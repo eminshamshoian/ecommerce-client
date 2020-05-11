@@ -1,7 +1,12 @@
 import React from 'react';
+import MainLayout from '../layout/MainLayout';
 
 const Signin = () => {
-    return <div>Signin</div>;
+    return (
+        <MainLayout title='Sign In' description='E-Commerce'>
+            ...
+        </MainLayout>
+    );
 };
 
 export default Signin;
