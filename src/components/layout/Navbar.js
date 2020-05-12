@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { signout } from '../../auth/index';
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
@@ -39,6 +40,19 @@ const Navbar = ({ history }) => {
                     >
                         Signup
                     </Link>
+                </li>
+                <li className='nav-item'>
+                    <span
+                        className='nav-link'
+                        style={{ cursor: 'pointer', color: '#fffff' }}
+                        onClick={() => {
+                            signout(() => {
+                                history.push('/');
+                            });
+                        }}
+                    >
+                        Signout
+                    </span>
                 </li>
             </ul>
         </div>
