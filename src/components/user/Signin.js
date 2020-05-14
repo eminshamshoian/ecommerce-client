@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { signin, authenticate } from '../../auth/index';
+import { signin, authenticate } from '../auth/index';
 
 // Import Components
 import MainLayout from '../layout/MainLayout';
