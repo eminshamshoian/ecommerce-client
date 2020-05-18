@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { signin, authenticate } from '../auth/index';
+import { signin, authenticate, isAuthenticated } from '../auth/index';
 
 // Import Components
 import MainLayout from '../layout/MainLayout';
@@ -16,6 +16,7 @@ const Signin = () => {
 
     // Destructure
     const { email, password, loading, error, redirect } = values;
+    const { user } = isAuthenticated();
 
     // Higher order function returns another function
     const handleChange = name => event => {
@@ -84,6 +85,14 @@ const Signin = () => {
 
     const redirectUser = () => {
         if (redirect) {
+            if (user && user.role === 1) {
+                return <Redirect to='/admin/dashboard' />;
+            } else {
+                return <Redirect to='/user/dashboard' />;
+            }
+        }
+
+        if (isAuthenticated()) {
             return <Redirect to='/' />;
         }
     };
