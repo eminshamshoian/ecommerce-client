@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { signin, authenticate, isAuthenticated } from '../auth/index';
-
-// Import Components
-import MainLayout from '../layout/MainLayout';
+import Layout from '../layout/MainLayout';
+import { signin, authenticate, isAuthenticated } from '../auth';
+import './user.css';
 
 const Signin = () => {
     const [values, setValues] = useState({
@@ -11,20 +10,17 @@ const Signin = () => {
         password: 'eminsh1319',
         error: '',
         loading: false,
-        redirect: false
+        redirectToReferrer: false
     });
 
-    // Destructure
-    const { email, password, loading, error, redirect } = values;
+    const { email, password, loading, error, redirectToReferrer } = values;
     const { user } = isAuthenticated();
 
-    // Higher order function returns another function
     const handleChange = name => event => {
         setValues({ ...values, error: false, [name]: event.target.value });
     };
 
     const clickSubmit = event => {
-        // So browser doesnt reload when button is clicked
         event.preventDefault();
         setValues({ ...values, error: false, loading: true });
         signin({ email, password }).then(data => {
@@ -34,24 +30,25 @@ const Signin = () => {
                 authenticate(data, () => {
                     setValues({
                         ...values,
-                        redirect: true
+                        redirectToReferrer: true
                     });
                 });
             }
         });
     };
 
-    const SignInForm = () => (
-        <form>
+    const signUpForm = () => (
+        <form className='auth-form p-5'>
             <div className='form-group'>
                 <label className='text-muted'>Email</label>
                 <input
                     onChange={handleChange('email')}
-                    type='eamil'
+                    type='email'
                     className='form-control'
                     value={email}
                 />
             </div>
+
             <div className='form-group'>
                 <label className='text-muted'>Password</label>
                 <input
@@ -61,8 +58,8 @@ const Signin = () => {
                     value={password}
                 />
             </div>
-            <button onClick={clickSubmit} className='btn btn-primary'>
-                Submit
+            <button onClick={clickSubmit} className='btn primary-button'>
+                Sign In
             </button>
         </form>
     );
@@ -79,35 +76,34 @@ const Signin = () => {
     const showLoading = () =>
         loading && (
             <div className='alert alert-info'>
-                <h1>Loading...</h1>
+                <h2>Loading...</h2>
             </div>
         );
 
     const redirectUser = () => {
-        if (redirect) {
+        if (redirectToReferrer) {
             if (user && user.role === 1) {
                 return <Redirect to='/admin/dashboard' />;
             } else {
                 return <Redirect to='/user/dashboard' />;
             }
         }
-
         if (isAuthenticated()) {
             return <Redirect to='/' />;
         }
     };
 
     return (
-        <MainLayout
-            title='Sign Up'
-            description='E-Commerce'
+        <Layout
+            title='Signin'
+            description='Signin to Node React E-commerce App'
             className='container col-md-8 offset-md-2'
         >
             {showLoading()}
             {showError()}
-            {SignInForm()}
+            {signUpForm()}
             {redirectUser()}
-        </MainLayout>
+        </Layout>
     );
 };
 

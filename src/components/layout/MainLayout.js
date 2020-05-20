@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../layout/Navbar';
+import '../../index.css';
 
 const MainLayout = ({
     title = 'Title',
@@ -8,7 +9,7 @@ const MainLayout = ({
     className
 }) => {
     return (
-        <div>
+        <div className='primary-bg'>
             <Navbar />
             <div className='jumbotron'>
                 <h2>{title}</h2>

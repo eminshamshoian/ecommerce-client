@@ -43,7 +43,7 @@ const Signup = () => {
     };
 
     const signUpForm = () => (
-        <form>
+        <form className='auth-form p-5'>
             <div className='form-group'>
                 <label className='text-muted'>Name</label>
                 <input
@@ -71,8 +71,8 @@ const Signup = () => {
                     value={password}
                 />
             </div>
-            <button onClick={clickSubmit} className='btn btn-primary'>
-                Submit
+            <button onClick={clickSubmit} className='btn primary-button'>
+                Register
             </button>
         </form>
     );

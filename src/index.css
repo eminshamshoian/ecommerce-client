@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-bg-color);
+}
+
+:root {
+    --primary-color: #d8092f;
+    --primary-hover-color: #a10a26;
+    --secondary-color: #232427;
+    --light-color: #555555;
+    --primary-bg-color: #eff0f9;
+    --secondary-bg-color: #faf9ff;
+}
+
+.primary-bg {
+    background-color: var(--primary-bg-color);
+}
+
+.jumbotron {
+    background-color: var(--secondary-bg-color);
+}
+
+/* Buttons */
+.primary-button {
+    background-color: var(--primary-color);
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    width: 8em;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-hover-color);
+    color: #ffffff;
+}
+
+.view-product-button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 10px;
+    width: 8em;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.view-product-button:hover {
+    background-color: var(--primary-hover-color);
+    color: #ffffff;
+}
+
+.add-cart-button {
+    background-color: #000000;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 10px;
+    width: 8em;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.add-cart-button:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.primary-responsive-btn {
+    background-color: var(--primary-color);
+}
+
+.primary-responsive-btn :hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* Labels */
+.primary-label {
+    color: var(--primary-color);
+}
+
+.secondary-label {
+    color: var(--secondary-color);
+}
+
+/* Card */
+.card.homepage-card {
+    background-color: var(--primary-bg-color);
+    width: 21rem;
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+.card.homepage-card:hover {
+    transform: scale(1.05);
+}
+
+.card-price {
+    font-size: 18px;
+    color: var(--light-color);
+}
+
+.in-stock {
+    color: white;
+    background-color: var(--primary-color);
+    width: 5rem;
+    border-radius: 30px;
+    text-align: center;
+}

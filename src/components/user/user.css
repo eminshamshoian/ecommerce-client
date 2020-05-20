@@ -1,0 +1,33 @@
+.auth-form {
+    background-color: var(--secondary-bg-color);
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 40px #00000042;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.card {
+    border: 0;
+    box-shadow: 10px 10px 10px #0000001c;
+}
+.card-header {
+    background-color: var(--primary-color);
+    color: #ffff;
+    border: 0;
+}
+
+.dashboard-items {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.list-group-item {
+    background-color: var(--secondary-bg-color);
+    border: 0;
+}
+
+.list-group-item:not(:last-child) {
+    border-bottom: 0.5px solid #d6d6d6;
+    font-size: 20px;
+    font-weight: 400;
+}

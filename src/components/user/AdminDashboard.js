@@ -11,7 +11,7 @@ const AdminDashboard = () => {
     const adminLinks = () => {
         return (
             <div className='card'>
-                <h4 className='card-header'>Admin Links</h4>
+                <h4 className='card-header p-4'>Admin Links</h4>
                 <ul className='list-group'>
                     <li className='list-group-item'>
                         <Link className='nav-link' to='/create/category'>
@@ -31,12 +31,12 @@ const AdminDashboard = () => {
     const adminInfo = () => {
         return (
             <div className='card mb-5'>
-                <h3 className='card-header'>User Information</h3>
+                <h3 className='card-header p-4'>User Information</h3>
                 <ul className='list-group'>
-                    <li className='list-group-item'>{name}</li>
-                    <li className='list-group-item'>{email}</li>
-                    <li className='list-group-item'>
-                        {role === 1 ? 'Admin' : 'User'}
+                    <li className='list-group-item'>Name: {name}</li>
+                    <li className='list-group-item'>Email: {email}</li>
+                    <li className='list-group-item dashboard-items'>
+                        Account Type: {role === 1 ? 'Admin' : 'User'}
                     </li>
                 </ul>
             </div>
@@ -44,14 +44,10 @@ const AdminDashboard = () => {
     };
 
     return (
-        <MainLayout
-            title='Dashboard'
-            description={`Welcome ${name}`}
-            className='container'
-        >
-            <div className='row'>
-                <div className='col-3'>{adminLinks()}</div>
-                <div className='col-9'>{adminInfo()}</div>
+        <MainLayout title='Dashboard' description={`Welcome ${name}`}>
+            <div className='row justify-content-center px-5'>
+                <div className='col-3 mr-5'>{adminLinks()}</div>
+                <div className='col-7 ml-5'>{adminInfo()}</div>
             </div>
         </MainLayout>
     );
