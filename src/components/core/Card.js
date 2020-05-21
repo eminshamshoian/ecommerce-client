@@ -11,7 +11,7 @@ const Card = ({ product }) => {
                     item={product}
                     url='product'
                 />
-                <div class='card-body px-0'>
+                <div class='card-body px-3'>
                     <h4>{product.name}</h4>
                     {/* <p>{product.description}</p> */}
                     <p className='card-price'>${product.price}</p>
@@ -23,12 +23,10 @@ const Card = ({ product }) => {
                         )}
                     </p>
                     <Link to='/'>
-                        <button className='view-product-button'>
-                            View Product
-                        </button>
+                        <button className='view-product-button'>View</button>
                     </Link>
                     <button className='add-cart-button mx-3'>
-                        Add to card
+                        Add to Cart
                     </button>
                 </div>
             </div>
