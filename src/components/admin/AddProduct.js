@@ -3,6 +3,7 @@ import Layout from '../layout/MainLayout';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
 import { createProduct, getCategories } from './ApiAdmin';
+import './AdminForms.css';
 
 const AddProduct = () => {
     const [values, setValues] = useState({
@@ -85,11 +86,21 @@ const AddProduct = () => {
         });
     };
 
+    const goBack = () => (
+        <div className='mt-5'>
+            <Link to='/admin/dashboard' className='text-warning'>
+                <button className='primary-button'>
+                    <i class='fas fa-caret-left mr-3'></i>Back
+                </button>
+            </Link>
+        </div>
+    );
+
     const newPostForm = () => (
-        <form className='mb-3' onSubmit={clickSubmit}>
+        <form className='mb-3 admin-form p-5' onSubmit={clickSubmit}>
             <h4>Post Photo</h4>
             <div className='form-group'>
-                <label className='btn btn-secondary'>
+                <label className='btn red-bg text-white'>
                     <input
                         onChange={handleChange('photo')}
                         type='file'
@@ -145,7 +156,9 @@ const AddProduct = () => {
             </div>
 
             <div className='form-group'>
-                <label className='text-muted'>Shipping</label>
+                <label className='text-muted'>
+                    Does this item require shipping?
+                </label>
                 <select
                     onChange={handleChange('shipping')}
                     className='form-control'
@@ -166,7 +179,7 @@ const AddProduct = () => {
                 />
             </div>
 
-            <button className='btn btn-outline-primary'>Create Product</button>
+            <button className='primary-button'>Add Product</button>
         </form>
     );
 
@@ -199,13 +212,15 @@ const AddProduct = () => {
         <Layout
             title='Add a new product'
             description={`G'day ${user.name}, ready to add a new product?`}
+            className='container'
         >
-            <div className='row'>
+            <div className='row py-5'>
                 <div className='col-md-8 offset-md-2'>
                     {showLoading()}
                     {showSuccess()}
                     {showError()}
                     {newPostForm()}
+                    {goBack()}
                 </div>
             </div>
         </Layout>

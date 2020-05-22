@@ -38,7 +38,7 @@ const Signin = () => {
     };
 
     const signUpForm = () => (
-        <form className='auth-form p-5'>
+        <form className='auth-form p-5 my-5'>
             <div className='form-group'>
                 <label className='text-muted'>Email</label>
                 <input

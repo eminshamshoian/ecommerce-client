@@ -47,15 +47,19 @@ const AddCategory = () => {
     const goBack = () => (
         <div className='mt-5'>
             <Link to='/admin/dashboard' className='text-warning'>
-                Back to Dashboard
+                <button className='primary-button'>
+                    <i class='fas fa-caret-left mr-3'></i>Back
+                </button>
             </Link>
         </div>
     );
 
     const newCategoryForm = () => (
-        <form onSubmit={handleSubmit}>
+        <form className='mb-3 admin-form p-5' onSubmit={handleSubmit}>
             <div className='form-group'>
-                <label className='text-muted'>Name</label>
+                <label className='text-muted'>
+                    What would you like to name this category?
+                </label>
                 <input
                     type='text'
                     className='form-control'
@@ -65,7 +69,7 @@ const AddCategory = () => {
                     required
                 />
             </div>
-            <button className='btn btn-outline-primary'>Create Category</button>
+            <button className='primary-button'>Add Category</button>
         </form>
     );
 
@@ -74,7 +78,7 @@ const AddCategory = () => {
             title='Add a new category'
             description={`Welcome ${user.name}, want to add a new category?`}
         >
-            <div className='row'>
+            <div className='row py-5'>
                 <div className='col-md-8 offset-md-2'>
                     {showSuccess()}
                     {showError()}

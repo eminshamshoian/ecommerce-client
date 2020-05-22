@@ -60,9 +60,9 @@ const UserDashboard = () => {
         <MainLayout
             title='Dashboard'
             description={`Welcome ${name}`}
-            className=''
+            className='container'
         >
-            <div className='row justify-content-center px-5'>
+            <div className='row justify-content-center px-5 py-5'>
                 <div className='col-3 mr-5'>{userLinks()}</div>
                 <div className='col-7 ml-5'>
                     {userInfo()}

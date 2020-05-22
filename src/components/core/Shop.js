@@ -104,14 +104,14 @@ const Shop = () => {
             description='Search for products'
             className='container'
         >
-            <div className='row d-block py-5'>
+            <div className='row d-block pb-3'>
                 <div className='shop-img'>
                     <img
                         className='w-100 py-5'
                         src='https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
                         alt='Promotional Pitcure'
                     />
-                    <div className='overlay'>
+                    <div className='shop-overlay'>
                         <div class='row justify-content-center promo-text'>
                             <h1>Find Out About Our Products</h1>
                         </div>

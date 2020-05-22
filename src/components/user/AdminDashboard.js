@@ -44,8 +44,12 @@ const AdminDashboard = () => {
     };
 
     return (
-        <MainLayout title='Dashboard' description={`Welcome ${name}`}>
-            <div className='row justify-content-center px-5'>
+        <MainLayout
+            title='Dashboard'
+            description={`Welcome ${name}`}
+            className='container'
+        >
+            <div className='row justify-content-center px-5 py-5'>
                 <div className='col-3 mr-5'>{adminLinks()}</div>
                 <div className='col-7 ml-5'>{adminInfo()}</div>
             </div>
